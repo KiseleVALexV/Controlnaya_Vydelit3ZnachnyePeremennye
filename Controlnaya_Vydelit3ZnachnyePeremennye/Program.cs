@@ -28,3 +28,24 @@ do
         ArrStr = ArrStr2;
     }
 } while (str != "");
+
+count = 0;
+for (int i =0; i < ArrStr.Length; i++)
+{
+    str = ArrStr[i];
+    if (str.Length <= 3) 
+    {
+        count++;
+        ArrStr2 = new string[count];
+
+        for (int i2 = 0; i2 < ArrStr2.Length - 1; i2++)
+        ArrStr2[i2] = ArrResult[i2];
+
+        ArrStr2[count - 1] = str;
+        ArrResult = ArrStr2;
+    }
+}
+Console.WriteLine("Строки с тремя и менее символами :");
+for (int i = 0; i < ArrResult.Length; i++) 
+      Console.WriteLine($"{ArrResult[i]} ");
+Console.ReadKey();
